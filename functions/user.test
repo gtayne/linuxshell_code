@@ -1,0 +1,14 @@
+#!/bin/bash
+user()
+{
+	#user = $1
+	#id user
+	if [ `echo $?` -eq 0 ];then
+		shell=`awk -F: /^$1/'{print $7}' /etc/passwd`
+		uid=`awk -F: /^$1/'{print $3}' /etc/passwd`
+		echo "UID is $uid"
+		echo "shell is $shell"
+	else
+		echo "this user doesn't exist"
+	fi
+}

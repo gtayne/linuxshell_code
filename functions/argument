@@ -1,0 +1,4 @@
+student(){
+	echo "i am a student,you are $1"
+}
+
